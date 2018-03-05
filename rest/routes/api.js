@@ -28,8 +28,17 @@ Vendedor.methods(['get', 'post', 'put', 'delete']);
 Vendedor.register(router, '/vendedores');
 
 router.get('/facturados', function(req, res){
+  Pedido.find({
+    estado:680
+  })
+  .exec(function(err, result) {
+    if (err) {
+        console.log(err);
+    } else {
+        res.json(result);
+    }
+    });
 
-  res.send("está corriendo");
 });
 
 module.exports = router;
