@@ -7,6 +7,6 @@ var transportistaSchema = new mongoose.Schema({
   id:String,
   nombre:String,
   ruta:String
-});
+}, {timestamps: true});
 
 module.exports = restful.model('Transportistas',transportistaSchema);

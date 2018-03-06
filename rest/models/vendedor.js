@@ -6,7 +6,7 @@ var mongoose = restful.mongoose;
 var vendedorSchema = new mongoose.Schema({
   id:String,
   nombre:String,
-  email:String  
-});
+  email:String
+}, {timestamps: true});
 
 module.exports = restful.model('Vendedores',vendedorSchema);

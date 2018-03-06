@@ -6,7 +6,7 @@ var mongoose = restful.mongoose;
 var rutaSchema = new mongoose.Schema({
   id:String,
   pedido:String,
-  llegada:Date  
-});
+  llegada:Date
+}, {timestamps: true});
 
 module.exports = restful.model('Rutas',rutaSchema);

@@ -5,11 +5,10 @@ var mongoose = restful.mongoose;
 
 var pedidoSchema = new mongoose.Schema({
   id:String,
-  cliente:String,
+  cliente:{type:mongoose.Schema.ObjectId, ref:'Cliente'},
   estado:Number,
   transportista:String,
-  orden:String,
-  ultimo_cambio:Date
-});
+  orden:String
+}, {timestamps: true});
 
 module.exports = restful.model('Pedidos',pedidoSchema);

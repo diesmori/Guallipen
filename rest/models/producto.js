@@ -6,6 +6,6 @@ var mongoose = restful.mongoose;
 var productoSchema = new mongoose.Schema({
   id:String,
   nombre:String
-});
+}, {timestamps: true});
 
 module.exports = restful.model('Productos',productoSchema);

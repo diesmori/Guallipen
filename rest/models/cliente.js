@@ -9,6 +9,6 @@ var clienteSchema = new mongoose.Schema({
   direccion:String,
   email:String,
   vendedor:String
-});
+}, {timestamps: true});
 
 module.exports = restful.model('Clientes',clienteSchema);
