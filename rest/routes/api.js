@@ -40,5 +40,18 @@ router.get('/facturados', function(req, res){
     });
 
 });
+router.get('/juani', function(req, res){
+  Pedido
+  .findOne({estado:680})
+  .populate('cliente', ['nombre'])
+  .exec(function(err, result) {
+    if (err) {
+        console.log("error en clientes oggg");
+    } else {
+        res.json(result.cliente.nombre);
+    }
+    });
+
+});
 
 module.exports = router;

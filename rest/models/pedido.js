@@ -5,7 +5,7 @@ var mongoose = restful.mongoose;
 
 var pedidoSchema = new mongoose.Schema({
   id:String,
-  cliente:{type:mongoose.Schema.ObjectId, ref:'Cliente'},
+  cliente:{type:mongoose.Schema.ObjectId, ref:'Clientes'},
   estado:Number,
   transportista:String,
   orden:String
