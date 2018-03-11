@@ -40,18 +40,30 @@ router.get('/facturados', function(req, res){
     });
 
 });
+
+router.get('/juanisafe', function(req, res){
+  Pedido
+  .find()
+
+  .populate('cliente',['nombre']).select('cliente -_id')
+  .exec(function(err, resp){
+    res.json(resp);
+  });
+});
+
 router.get('/juani', function(req, res){
   Pedido
-  .findOne({estado:680})
-  .populate('cliente', ['nombre'])
-  .exec(function(err, result) {
-    if (err) {
-        console.log("error en clientes oggg");
-    } else {
-        res.json(result.cliente.nombre);
-    }
+  .distinct('cliente')
+  .exec(function(err, resp){
+    Cliente
+    .where('_id',resp)
+    .select('nombre -_id')
+    .exec(function(errr, ans){
+      res.json(ans);
     });
 
+  });
 });
+
 
 module.exports = router;
