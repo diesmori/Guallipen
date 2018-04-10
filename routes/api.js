@@ -41,16 +41,6 @@ router.get('/facturados', function(req, res){
 
 });
 
-router.get('/juanisafe', function(req, res){
-  Pedido
-  .find()
-
-  .populate('cliente',['nombre']).select('cliente -_id')
-  .exec(function(err, resp){
-    res.json(resp);
-  });
-});
-
 router.get('/juani', function(req, res){
   Pedido
   .distinct('cliente')
