@@ -3,6 +3,7 @@ var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 
 const PORT = process.env.PORT || 5000;
+const HOST = "0.0.0.0";
 
 //Mongo
 mongoose.connect(
@@ -18,4 +19,4 @@ app.use(bodyParser.json());
 app.use("/api", require("./routes/api"));
 
 //Listener
-app.listen(PORT);
+app.listen(HOST, PORT);
