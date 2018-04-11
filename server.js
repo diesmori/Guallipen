@@ -16,4 +16,4 @@ app.use(bodyParser.json());
 app.use("/api", require("./routes/api"));
 
 //Listener
-app.listen(4000);
+app.listen(process.env.PORT || 5000);
