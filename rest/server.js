@@ -18,4 +18,4 @@ app.use(bodyParser.json());
 app.use("/api", require("./routes/api"));
 
 //Listener
-app.listen(PORT, "0.0.0.0");
+app.listen(PORT, () => console.log(`Listening on ${PORT}`));
