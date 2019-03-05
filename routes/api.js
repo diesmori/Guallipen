@@ -40,7 +40,7 @@ router.get("/facturados_test", function(req, res) {
   });
 });
 router.get("/ingresados", function(req, res) {
-  Pedido.find({ estado: 620 })
+  Pedido.find({ estado: 520 })
     .lean()
     .exec()
     .then(function(pedidos) {
@@ -63,7 +63,7 @@ router.get("/ingresados", function(req, res) {
 });
 
 router.get("/liberados", function(req, res) {
-  Pedido.find({ estado: 640 })
+  Pedido.find({ estado: 540 })
     .lean()
     .exec()
     .then(function(pedidos) {
@@ -85,7 +85,7 @@ router.get("/liberados", function(req, res) {
     });
 });
 router.get("/facturados", function(req, res) {
-  Pedido.find({ estado: 680 })
+  Pedido.find({ estado: 585 })
     .lean()
     .exec()
     .then(function(pedidos) {
